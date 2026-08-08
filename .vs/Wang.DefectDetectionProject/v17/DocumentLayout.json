@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
               "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
               "RelativeToolTip": "Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
-              "ViewState": "AgIAAEwBAAAAAAAAAAAAAF8BAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-08T12:30:17.112Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
               "ViewState": "AgIAAHACAAAAAAAAAAAowIMCAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-08T12:30:14.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-08T12:30:14.442Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
               "RelativeToolTip": "Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-08-04T02:09:25.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-04T02:09:25.886Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
               "ViewState": "AgIAAJUAAAAAAAAAAAAAAKcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-04T02:18:56.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-04T02:18:56.825Z"
             }
           ]
         }

@@ -22,3 +22,4 @@ D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetect
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Shared\obj\Release\net8.0-windows\ref\Wang.DefectDetectionProject.Shared.dll
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Shared\obj\Release\net8.0-windows\Controls\TabControlStyle.baml
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Shared\obj\Release\net8.0-windows\Themes\Generic.baml
+D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Shared\obj\Release\net8.0-windows\Wang.DefectDetectionProject.Shared.sourcelink.json

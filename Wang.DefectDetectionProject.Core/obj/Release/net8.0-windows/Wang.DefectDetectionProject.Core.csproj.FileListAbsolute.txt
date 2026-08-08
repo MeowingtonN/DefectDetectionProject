@@ -18,3 +18,4 @@ D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetect
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Core\obj\Release\net8.0-windows\Wang.DefectDetectionProject.Core_MarkupCompile.lref
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Core\obj\Release\net8.0-windows\DefectDetection\Views\DefectInfoEditView.baml
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Core\obj\Release\net8.0-windows\Wang.DefectDetectionProject.Core.g.resources
+D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.Core\obj\Release\net8.0-windows\Wang.DefectDetectionProject.Core.sourcelink.json

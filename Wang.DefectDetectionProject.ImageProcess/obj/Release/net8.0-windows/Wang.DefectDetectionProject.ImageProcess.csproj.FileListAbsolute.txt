@@ -23,3 +23,4 @@ D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetect
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.ImageProcess\obj\Release\net8.0-windows\Wang.DefectDetectionProject.ImageProcess.pdb
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.ImageProcess\obj\Release\net8.0-windows\ref\Wang.DefectDetectionProject.ImageProcess.dll
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.ImageProcess\obj\Release\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.ImageProcess\obj\Release\net8.0-windows\Wang.DefectDetectionProject.ImageProcess.sourcelink.json

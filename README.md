@@ -34,3 +34,17 @@ Windows操作系统，需安装有.NET 8环境和HALCON相关动态链接库。
 - AreaCenter（计算区域的面积以及区域中心行列坐标）
 - ......
 
+## 项目展示
+
+### 图像处理
+
+![图像处理](./README.assets/ImageProcessing.png)
+
+### 模型训练
+
+![模型训练](./README.assets/ModelTrainning.png)
+
+### 缺陷检测
+
+![缺陷检测](./README.assets/DefectDetection.png)
+

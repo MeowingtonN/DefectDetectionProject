@@ -67,3 +67,4 @@ D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetect
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject\bin\x64\Release\net8.0-windows\RBush.dll
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject\bin\x64\Release\net8.0-windows\SixLabors.Fonts.dll
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject\bin\x64\Release\net8.0-windows\System.IO.Packaging.dll
+D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject\obj\x64\Release\net8.0-windows\Wang.DefectDetectionProject.sourcelink.json

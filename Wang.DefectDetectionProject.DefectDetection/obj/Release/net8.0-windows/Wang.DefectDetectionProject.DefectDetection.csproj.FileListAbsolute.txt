@@ -22,3 +22,4 @@ D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetect
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.DefectDetection\obj\Release\net8.0-windows\refint\Wang.DefectDetectionProject.DefectDetection.dll
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.DefectDetection\obj\Release\net8.0-windows\Wang.DefectDetectionProject.DefectDetection.pdb
 D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.DefectDetection\obj\Release\net8.0-windows\ref\Wang.DefectDetectionProject.DefectDetection.dll
+D:\Capstone\DefectDetectionProject\Wang.DefectDetectionProject\Wang.DefectDetectionProject.DefectDetection\obj\Release\net8.0-windows\Wang.DefectDetectionProject.DefectDetection.sourcelink.json
