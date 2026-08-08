@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Wang.DefectDetectionProject.Views.SettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesignColors="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors"
+             xmlns:local="clr-namespace:Wang.DefectDetectionProject.Views"
+             xmlns:extensions="clr-namespace:Wang.DefectDetectionProject.Extensions"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <extensions:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+        <!-- DataTemplate内部包装了一个按钮，应用该数据模板可以渲染出按钮。 -->
+        <!-- 指定数据模板的数据类型（x:Type）为Color，这样应用该数据模板的（容器）控件所绑定的数据源（的元素）也应为Color类型。 -->
+        <!-- CommandParameter="{Binding}" 意为将按钮绑定的 Color 对象作为参数传给命令。 -->
+        <DataTemplate x:Key="SwatchColorTemplate" DataType="{x:Type Color}">
+            <!-- WPF中 Button.Background 是 Brush 类型，而数据源是 Color 结构体，所以需要转换器将 Color 包装成 SolidColorBrush，才能赋给按钮背景。 -->
+            <!-- Background属性默认单向绑定。 -->
+            <Button
+                Width="40"
+                Height="40"
+                Margin="1"
+                Background="{Binding Converter={StaticResource ColorToBrushConverter}}"
+                BorderThickness="0"
+                Command="{Binding DataContext.ChangeHueCommand, RelativeSource={RelativeSource AncestorType=local:SettingView}}"
+                CommandParameter="{Binding}" />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{DynamicResource Setting}" FontSize="26" FontWeight="Bold" Margin="15, 15, 15, 10" />
+        <Button Content="{DynamicResource SaveSettings}" Command="{Binding SaveCommand}" HorizontalAlignment="Right" Margin="10, 0" Foreground="White"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15, 5, 15, 15">
+                <TextBlock Text="{DynamicResource CurrentLanguage}" FontSize="16" />
+                <ComboBox 
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                    HorizontalAlignment="Left"
+                    Padding="5" 
+                    Margin="0, 10" 
+                    Width="150" 
+                    BorderThickness="1"
+                    ItemsSource="{Binding LanguageInfoList}"
+                    SelectedItem="{Binding CurrentLanguage}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Value}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Text="{DynamicResource Skin}" FontSize="16" />
+                <StackPanel Margin="0,10" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource LightColor}" />
+                    <ToggleButton Margin="8,0,8,0" IsChecked="{Binding IsDarkTheme}" />
+                    <TextBlock Text="{DynamicResource DarkColor}" />
+                </StackPanel>
+
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding Swatches}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type materialDesignColors:ISwatch}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                    Width="80"
+                    VerticalAlignment="Center"
+                    Text="{Binding Name}" />
+                                <!-- 将数据模板SwatchColorTemplate赋给这里ItemsControl的ItemTemplate。数据模板SwatchColorTemplate的类型为Color。 -->
+                                <!-- 将ItemsControl的数据源设置为Hues，数据源元素类型和数据模板的类型需一致。Hues是Color集合，是ViewModel中Swatches集合元素的成员。 -->
+                                <ItemsControl ItemTemplate="{StaticResource SwatchColorTemplate}" ItemsSource="{Binding Hues}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <!-- VirtualizingStackPanel能在绑定的数据项非常多时大幅降低内存占用和 UI 加载时间。 -->
+                                            <!-- VirtualizingStackPanel的做法是：只为当前视口内（及少量缓冲区域）的项生成 UI 容器，滚动时回收不可见的容器并重用于新出现的数据项。 -->
+                                            <VirtualizingStackPanel Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

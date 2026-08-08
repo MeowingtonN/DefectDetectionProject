@@ -1,0 +1,113 @@
+﻿<Window x:Class="Wang.DefectDetectionProject.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:Wang.DefectDetectionProject.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Icon="/Assets/ico/icon.ico"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Title="{DynamicResource ApplicationName}" Height="960" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- TopBar -->
+        <md:ColorZone Mode="PrimaryDark" PreviewMouseDown="TopBar_PreviewMouseDown">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Margin="10,15,15,15" Text="{DynamicResource ApplicationName}" FontSize="22" FontWeight="Bold" Foreground="White">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <i:InvokeCommandAction Command="{Binding GoOperationCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                </TextBlock>
+
+                <!-- 集合控件绑定的数据源类型应要为集合（ObservableCollection） -->
+                <ListBox x:Name="listMenuBox" Grid.Column="1" ItemsSource="{Binding NavigationMenuService.NavigationItems}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Grid>
+                                            <Border x:Name="border" />
+                                            <!-- TemplateBinding是一种轻量级单向绑定，专门用于控件模板，只能从控件属性传递值到模板内部，不能反向。 -->
+                                            <!-- 这里的{TemplateBinding Background}，是将这里Border元素的Background属性与对应ListBoxItem的Background属性绑定起来。 -->
+                                            <Border x:Name="borderHeader" Background="{TemplateBinding Background}" />
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                          TextBlock.Foreground="{TemplateBinding Foreground}" />
+                                        </Grid>
+                                        <!-- 设置控件的触发器 -->
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="borderHeader" Property="Background" Value="#ffffff" />
+                                                <Setter TargetName="borderHeader" Property="Opacity" Value="0.1" />
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#ffffff" />
+                                                <Setter TargetName="border" Property="BorderThickness" Value="0,0,0,3" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="borderHeader" Property="Background" Value="#ffffff" />
+                                                <Setter TargetName="borderHeader" Property="Opacity" Value="0.1" />
+                                                <Setter TargetName="border" Property="BorderBrush" Value="#ffffff" />
+                                                <Setter TargetName="border" Property="BorderThickness" Value="0,0,0,3" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="15, 5" Text="{Binding Name}" FontSize="16" Foreground="White"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                    <i:Interaction.Triggers>
+                        <!-- 在TopBar中，更改选中的ListBox的Item时，触发执行绑定的ViewModel中的NavigateCommand委托，
+                         并将选中的Item所代表的数据源集合的对应元素作为入参传入该委托。 -->
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <!-- 命令模式及其传参。SelectedItem属性返回的是数据对象本身，也就是当前被选中项所对应的数据上下文（DataContext）。
+                             SelectedItem 是 Selector 类控件（如 ListBox、ComboBox、ListView）的属性。 -->
+                            <i:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="{Binding ElementName=listMenuBox, Path=SelectedItem}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
+            </Grid>
+        </md:ColorZone>
+
+        <md:DialogHost Grid.Row="1">
+            <!-- Content属性的绑定方法是元素绑定(Binding ElementName=...)的方法，指定要绑定的控件名和属性名以及绑定模式。 -->
+            <md:DrawerHost Content="{Binding ElementName=MainViewContentControl, Path=Content, Mode=TwoWay}">
+            </md:DrawerHost>
+        </md:DialogHost>
+
+        <!-- 使用ContentControl UI容器。使用Prism的Region进行导航。往MainViewRegion区域中加载一个页面，相当于为本容器的Content赋值。
+         由于md:DrawerHost的Content与本容器的Content进行了元素绑定，且本容器的可见性设置为不显示且不占用布局空间，所以页面最终会显示在md:DrawerHost的Content中。 -->
+        <ContentControl prism:RegionManager.RegionName="MainViewRegion" Name="MainViewContentControl" Visibility="Collapsed"/>
+    </Grid>
+</Window>

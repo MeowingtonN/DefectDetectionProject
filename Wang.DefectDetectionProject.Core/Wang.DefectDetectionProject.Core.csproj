@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.105.1" />
+		<PackageReference Include="MaterialDesignColors" Version="5.2.0" />
+		<PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.27" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="halcondotnet">
+			<HintPath>..\Wang.DefectDetectionProject\bin\x64\Release\net8.0-windows\dotnet35\halcondotnet.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>

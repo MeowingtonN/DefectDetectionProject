@@ -1,0 +1,270 @@
+﻿<UserControl x:Class="Wang.DefectDetectionProject.ImageProcess.Views.ImageProcessView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:nodify="clr-namespace:Nodify;assembly=Nodify"
+             xmlns:local="clr-namespace:Wang.DefectDetectionProject.ImageProcess.Views"
+             xmlns:vm="clr-namespace:Wang.DefectDetectionProject.ImageProcess.ViewModels"
+             xmlns:controls="clr-namespace:Wang.DefectDetectionProject.Shared.Controls;assembly=Wang.DefectDetectionProject.Shared"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="ComboBox" x:Key="NodeComboBoxStyle">
+            <Setter Property="Background" Value="#FF3E3E42"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- 告诉 WPF：只要是 EditorViewModel 类型的数据，就用 NodifyEditor 来渲染 -->
+        <DataTemplate DataType="{x:Type vm:EditorViewModel}">
+            <nodify:NodifyEditor 
+                x:Name="Editor"
+                PreviewKeyDown = "Editor_PreviewKeyDown" 
+                CanSelectMultipleItems="True"
+                Connections="{Binding Connections, Mode=TwoWay}"
+                ItemsSource="{Binding Nodes, Mode=TwoWay}" 
+                ConnectionCompletedCommand="{Binding CreateConnectionCommand}"
+                DisconnectConnectorCommand="{Binding DisconnectConnectorCommand}"
+                Background="#FF2D2D30"
+                GridCellSize="20">
+
+                <!-- 1. 容器样式：将 Location 绑定到画布位置 -->
+                <nodify:NodifyEditor.ItemContainerStyle>
+                    <Style TargetType="{x:Type nodify:ItemContainer}">
+                        <Setter Property="Location" Value="{Binding Location, Mode=TwoWay}" />
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    </Style>
+                </nodify:NodifyEditor.ItemContainerStyle>
+
+                <nodify:NodifyEditor.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:NodeViewModel}">
+                        <nodify:Node
+                            Header="{Binding Title}"
+                            Input="{Binding InputConnectors}"
+                            Output="{Binding OutputConnectors}"
+                            Content="{Binding ComboOptions}">
+
+                            <!-- 定制 Content 区域的显示方式 -->
+                            <nodify:Node.ContentTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type vm:ComboOptionViewModel}">
+                                                <!-- 横向排列：标签 + 下拉框 -->
+                                                <StackPanel Orientation="Horizontal" Margin="2">
+                                                    <TextBlock Text="{Binding Label}" 
+                                                        VerticalAlignment="Center" 
+                                                        Foreground="LightGray" 
+                                                        Width="60"
+                                                        Margin="0,0,3,0" />
+                                                    <ComboBox ItemsSource="{Binding Items}"
+                                                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                                                        Style="{StaticResource NodeComboBoxStyle}"
+                                                        Width="100"
+                                                        Background="#FF3E3E42"
+                                                        BorderBrush="Gray"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </nodify:Node.ContentTemplate>
+
+                            <nodify:Node.InputConnectorTemplate>
+                                <DataTemplate DataType="{x:Type vm:ConnectorViewModel}">
+                                    <nodify:NodeInput
+                                        Header="{Binding Title}"
+                                        Anchor="{Binding Anchor, Mode=OneWayToSource}"
+                                        IsConnected="{Binding IsConnected}" />
+                                </DataTemplate>
+                            </nodify:Node.InputConnectorTemplate>
+
+                            <nodify:Node.OutputConnectorTemplate>
+                                <DataTemplate DataType="{x:Type vm:ConnectorViewModel}">
+                                    <nodify:NodeOutput
+                                        Header="{Binding Title}"
+                                        Anchor="{Binding Anchor, Mode=OneWayToSource}"
+                                        IsConnected="{Binding IsConnected}" />
+                                </DataTemplate>
+                            </nodify:Node.OutputConnectorTemplate>
+                        </nodify:Node>
+                    </DataTemplate>
+                </nodify:NodifyEditor.ItemTemplate>
+
+                <nodify:NodifyEditor.ConnectionTemplate>
+                    <DataTemplate DataType="{x:Type vm:ConnectionViewModel}">
+                        <nodify:Connection
+                            Source="{Binding Source.Anchor}"
+                            Target="{Binding Target.Anchor}"
+                            SourceOffsetMode="Rectangle"
+                            TargetOffsetMode="Rectangle" 
+                            SourceOffset="1, 1"
+                            TargetOffset="1, 1"
+                            Visibility="Visible" 
+                            IsEnabled="True" 
+                            IsHitTestVisible="True" 
+                            Focusable="True" />
+                    </DataTemplate>
+                </nodify:NodifyEditor.ConnectionTemplate>
+            </nodify:NodifyEditor>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.3*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="0, 10, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <controls:ImageEditView DrawingObjectList="{Binding DrawingObjectList, Mode=TwoWay}" Image="{Binding CurrentImage, Mode=TwoWay}" HWindow="{Binding HWindow, Mode=TwoWay}"/>
+
+            <!-- 只需绑定数据属性，WPF 会自动寻找 NodifyEditor 控件来展示它，并自动赋上 DataContext -->
+            <ContentControl Grid.Row="1" Content="{Binding ImageProcessService.EditorViewModel}" Margin="0, 0, 0, 0"/>
+
+            <TextBlock Grid.Row="2" Margin="10" Text="{Binding Message}" Foreground="{DynamicResource MaterialDesignBody}"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="0, 10, 0, 0">
+            <TabControl>
+                <TabItem Header="{DynamicResource ImageProcessingDebugging}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                            <StackPanel Margin="2, 10, 0, 0">
+                                <Expander Foreground="{DynamicResource MaterialDesignBody}" FontWeight="Bold" FontSize="14">
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="-18, 0">
+                                            <TextBlock Text="{DynamicResource ImgSrc}" FontWeight="Bold" FontSize="18"/>
+                                        </StackPanel>
+                                    </Expander.Header>
+
+                                    <Expander.Content>
+                                        <StackPanel>
+                                            <Button Content="{DynamicResource LoadSingleImage}" Margin="10, 10, 15, 10" Command="{Binding LoadSingleImageCommand}"/>
+                                            <Button Content="{DynamicResource SetRecognitionArea}" Margin="10, 0, 15, 10" Command="{Binding SetROIAreaCommand}"/>
+                                            <Button Content="{DynamicResource ClearROIArea}" Margin="10, 0, 15, 10" Command="{Binding ClearROIAreaCommand}"/>
+                                        </StackPanel>
+                                    </Expander.Content>
+                                </Expander>
+
+                                <Expander Foreground="{DynamicResource MaterialDesignBody}" FontWeight="Bold" FontSize="14">
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="-18, 0">
+                                            <TextBlock Text="{DynamicResource ImgProcessOperator}" FontWeight="Bold" FontSize="18"/>
+                                        </StackPanel>
+                                    </Expander.Header>
+
+                                    <Expander.Content>
+                                        <StackPanel>
+                                            <Button Content="{DynamicResource Grayscale}" Margin="10, 10, 15, 10" Command="{Binding GrayscaleCommand}"/>
+                                            <Button Content="{DynamicResource HistogramEqualization}" Margin="10, 0, 15, 10" Command="{Binding HistogramEqualizationCommand}"/>
+                                            <Button Content="{DynamicResource MedianFilter}" Margin="10, 0, 15, 10" Command="{Binding MedianFilterCommand}"/>
+                                            <Button Content="{DynamicResource GaussianFilter}" Margin="10, 0, 15, 10" Command="{Binding GaussianFilterCommand}"/>
+                                        </StackPanel>
+                                    </Expander.Content>
+                                </Expander>
+
+                                <Expander Foreground="{DynamicResource MaterialDesignBody}" FontWeight="Bold" FontSize="14">
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="-18, 0">
+                                            <TextBlock Text="{DynamicResource RecipeSetting}" FontWeight="Bold" FontSize="18"/>
+                                        </StackPanel>
+                                    </Expander.Header>
+
+                                    <Expander.Content>
+                                        <StackPanel>
+                                            <Button Content="{DynamicResource RecipeSaving}" Margin="10, 10, 15, 10" Command="{Binding RecipeSavingCommand}"/>
+                                        </StackPanel>
+                                    </Expander.Content>
+                                </Expander>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <StackPanel Grid.Row="1" Margin="0,10">
+                            <Button Content="{DynamicResource Debug}" Command="{Binding RunDebuggingCommand}"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="{DynamicResource ImageProcessingApplying}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                            <StackPanel Margin="2, 10, 0, 0">
+                                <Expander Foreground="{DynamicResource MaterialDesignBody}" FontWeight="Bold" FontSize="14">
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="-18, 0">
+                                            <TextBlock Text="{DynamicResource ImgSrc}" FontWeight="Bold" FontSize="18"/>
+                                        </StackPanel>
+                                    </Expander.Header>
+
+                                    <Expander.Content>
+                                        <StackPanel>
+                                            <Button Content="{DynamicResource LoadImage}" Margin="10, 10, 15, 10" Command="{Binding LoadImagesCommand}"/>
+                                            <TextBox IsReadOnly="True" Margin="10, 0, 15, 15" Text="{Binding LoadedImgsArray}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Padding="5"/>
+                                            <Button Content="{DynamicResource LoadDirectory}" Margin="10, 0, 15, 10" Command="{Binding LoadDirectoryCommand}"/>
+                                            <TextBox IsReadOnly="True" Margin="10, 0, 15, 15" Text="{Binding ImgSrcDirectoryName}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Padding="5"/>
+                                        </StackPanel>
+                                    </Expander.Content>
+                                </Expander>
+
+                                <Expander Foreground="{DynamicResource MaterialDesignBody}" FontWeight="Bold" FontSize="14">
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="-18, 0">
+                                            <TextBlock Text="{DynamicResource ImgOutput}" FontWeight="Bold" FontSize="18"/>
+                                        </StackPanel>
+                                    </Expander.Header>
+
+                                    <Expander.Content>
+                                        <StackPanel>
+                                            <Button Content="{DynamicResource LoadImgSaveDirectory}" Margin="10, 10, 15, 10" Command="{Binding LoadImgSaveDirectoryCommand}"/>
+                                            <TextBox IsReadOnly="True" Margin="10, 0, 15, 15" Text="{Binding ImageSaveDirectory}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Padding="5"/>
+                                        </StackPanel>
+                                    </Expander.Content>
+                                </Expander>
+
+                                <Expander Foreground="{DynamicResource MaterialDesignBody}" FontWeight="Bold" FontSize="14">
+                                    <Expander.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="-18, 0">
+                                            <TextBlock Text="{DynamicResource RecipeApplying}" FontWeight="Bold" FontSize="18"/>
+                                        </StackPanel>
+                                    </Expander.Header>
+
+                                    <Expander.Content>
+                                        <StackPanel>
+                                            <Button Content="{DynamicResource LoadRecipeApplying}" Margin="10, 10, 15, 10" Command="{Binding RecipeApplyingCommand}"/>
+                                            <TextBox IsReadOnly="True" Margin="10, 0, 15, 15" Text="{Binding RecipeFileName}" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Padding="5"/>
+                                        </StackPanel>
+                                    </Expander.Content>
+                                </Expander>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <StackPanel Grid.Row="1" Margin="0,10">
+                            <Button Content="{DynamicResource RunAndSave}" Command="{Binding RunAndSaveCommand}"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>

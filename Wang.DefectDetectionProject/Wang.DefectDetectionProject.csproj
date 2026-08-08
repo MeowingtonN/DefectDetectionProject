@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+	<ApplicationIcon>Assets\ico\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\ico\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSql" Version="3.5.309" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.5.309" />
+    <PackageReference Include="MaterialDesignColors" Version="5.2.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.27" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Wang.DefectDetectionProject.Core\Wang.DefectDetectionProject.Core.csproj" />
+    <ProjectReference Include="..\Wang.DefectDetectionProject.DefectDetection\Wang.DefectDetectionProject.DefectDetection.csproj" />
+    <ProjectReference Include="..\Wang.DefectDetectionProject.ImageProcess\Wang.DefectDetectionProject.ImageProcess.csproj" />
+    <ProjectReference Include="..\Wang.DefectDetectionProject.Shared\Wang.DefectDetectionProject.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="halcondotnet">
+      <HintPath>bin\x64\Release\net8.0-windows\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\OperationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

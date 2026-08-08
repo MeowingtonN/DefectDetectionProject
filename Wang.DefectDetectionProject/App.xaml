@@ -1,0 +1,27 @@
+﻿<prism:PrismApplication x:Class="Wang.DefectDetectionProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Wang.DefectDetectionProject"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme
+                BaseTheme="Dark"
+                ColorAdjustment="{materialDesign:ColorAdjustment}"
+                PrimaryColor="DeepPurple"
+                SecondaryColor="Amber" />
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+
+                <!-- 自定义控件及控件样式资源 -->
+                <ResourceDictionary Source="pack://application:,,,/Wang.DefectDetectionProject.Shared;component/Themes/Generic.xaml" />
+
+                <!-- 多语言资源。在视图xaml文件中可通过{DynamicResource `Key`}获取资源内部键对应的值。 -->
+                <ResourceDictionary Source="pack://application:,,,/Wang.DefectDetectionProject;component/Assets/en-US.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Wang.DefectDetectionProject;component/Assets/zh-CN.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

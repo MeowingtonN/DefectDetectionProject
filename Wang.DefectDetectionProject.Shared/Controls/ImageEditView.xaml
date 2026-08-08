@@ -1,0 +1,37 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+xmlns:halcon="clr-namespace:HalconDotNet;assembly=halcondotnet"
+xmlns:control="clr-namespace:Wang.DefectDetectionProject.Shared.Controls">
+
+    <!-- 样式，需设置目标类型是相应路径下的图像编辑控件。 -->
+    <Style TargetType="control:ImageEditView">
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- 控件模板，需设置目标类型是相应路径下的图像编辑控件，用于重新设置控件应该长什么样。 -->
+                <ControlTemplate TargetType="control:ImageEditView">
+                    <Grid Background="Black">
+                        <!-- 在本控件中点击鼠标右键，会在鼠标处弹出菜单 -->
+                        <Grid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource ChooseShape}">
+                                    <MenuItem x:Name="PART_RECT" Header="{DynamicResource DrawRect}"/>
+                                    <MenuItem x:Name="PART_ELLIPSE" Header="{DynamicResource DrawEllipse}"/>
+                                    <MenuItem x:Name="PART_CIRCLE" Header="{DynamicResource DrawCircle}"/>
+                                    <MenuItem x:Name="PART_REGION" Header="{DynamicResource DrawRegion}"/>
+                                </MenuItem>
+                                <MenuItem x:Name="PART_CLEAR" Header="{DynamicResource ClearGraphic}"/>
+                            </ContextMenu>
+                        </Grid.ContextMenu>
+
+                        <TextBlock x:Name="PART_MSG" Margin="5" Foreground="Teal" FontSize="20" Panel.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <halcon:HSmartWindowControlWPF x:Name="PART_SMART"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+    

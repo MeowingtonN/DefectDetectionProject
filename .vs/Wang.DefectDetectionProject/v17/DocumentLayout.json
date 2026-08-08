@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8CA0BE2D-2FF2-42E4-AAAE-3BFCA38735AB}|Wang.DefectDetectionProject.Core\\Wang.DefectDetectionProject.Core.csproj|d:\\capstone\\defectdetectionproject\\wang.defectdetectionproject\\wang.defectdetectionproject.core\\defectdetection\\defectdetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CA0BE2D-2FF2-42E4-AAAE-3BFCA38735AB}|Wang.DefectDetectionProject.Core\\Wang.DefectDetectionProject.Core.csproj|solutionrelative:wang.defectdetectionproject.core\\defectdetection\\defectdetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8CA0BE2D-2FF2-42E4-AAAE-3BFCA38735AB}|Wang.DefectDetectionProject.Core\\Wang.DefectDetectionProject.Core.csproj|d:\\capstone\\defectdetectionproject\\wang.defectdetectionproject\\wang.defectdetectionproject.core\\defectdetection\\modeltrainservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CA0BE2D-2FF2-42E4-AAAE-3BFCA38735AB}|Wang.DefectDetectionProject.Core\\Wang.DefectDetectionProject.Core.csproj|solutionrelative:wang.defectdetectionproject.core\\defectdetection\\modeltrainservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF49EAEC-8C01-4356-9A5C-EFB60BCF320A}|Wang.DefectDetectionProject.DefectDetection\\Wang.DefectDetectionProject.DefectDetection.csproj|d:\\capstone\\defectdetectionproject\\wang.defectdetectionproject\\wang.defectdetectionproject.defectdetection\\views\\defectdetectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF49EAEC-8C01-4356-9A5C-EFB60BCF320A}|Wang.DefectDetectionProject.DefectDetection\\Wang.DefectDetectionProject.DefectDetection.csproj|solutionrelative:wang.defectdetectionproject.defectdetection\\views\\defectdetectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF49EAEC-8C01-4356-9A5C-EFB60BCF320A}|Wang.DefectDetectionProject.DefectDetection\\Wang.DefectDetectionProject.DefectDetection.csproj|d:\\capstone\\defectdetectionproject\\wang.defectdetectionproject\\wang.defectdetectionproject.defectdetection\\viewmodels\\defectdetectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF49EAEC-8C01-4356-9A5C-EFB60BCF320A}|Wang.DefectDetectionProject.DefectDetection\\Wang.DefectDetectionProject.DefectDetection.csproj|solutionrelative:wang.defectdetectionproject.defectdetection\\viewmodels\\defectdetectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DefectDetectionService.cs",
+              "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
+              "RelativeDocumentMoniker": "Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
+              "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
+              "RelativeToolTip": "Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
+              "ViewState": "AgIAAEwBAAAAAAAAAAAAAF8BAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T12:30:17.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ModelTrainService.cs",
+              "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
+              "RelativeDocumentMoniker": "Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
+              "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
+              "RelativeToolTip": "Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
+              "ViewState": "AgIAAHACAAAAAAAAAAAowIMCAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T12:30:14.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DefectDetectionView.xaml",
+              "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
+              "RelativeDocumentMoniker": "Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
+              "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
+              "RelativeToolTip": "Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-04T02:09:25.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DefectDetectionViewModel.cs",
+              "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
+              "RelativeDocumentMoniker": "Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
+              "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
+              "RelativeToolTip": "Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAAKcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-04T02:18:56.825Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

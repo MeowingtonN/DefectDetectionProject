@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    >
+    <sys:String x:Key="ApplicationName">WPF/Halcon Defects Detection Platform</sys:String>
+
+    <sys:String x:Key="ImageProcessing">Image Processing</sys:String>
+    <sys:String x:Key="DefectDetection">Defect Detection</sys:String>
+
+    <sys:String x:Key="LoadDirectory">Load Directory</sys:String>
+    <sys:String x:Key="LoadInferenceFiles">Load Files for Inference</sys:String>
+    <sys:String x:Key="InferenceParams">Params for Inference</sys:String>
+    <sys:String x:Key="BatchSize">Batch Size for Inference</sys:String>
+    <sys:String x:Key="ResultExport">Export Results</sys:String>
+    
+    <sys:String x:Key="ChooseShape">Choose Shape To Draw</sys:String>
+    <sys:String x:Key="DrawRect">Draw a Rectangle</sys:String>
+    <sys:String x:Key="DrawEllipse">Draw an Ellipse</sys:String>
+    <sys:String x:Key="DrawCircle">Draw a Circle</sys:String>
+    <sys:String x:Key="DrawRegion">Draw Any Shape</sys:String>
+    <sys:String x:Key="ClearGraphic">Clear All Drawn Shapes</sys:String>
+
+    <sys:String x:Key="ImageProcessingDebugging">Debugging</sys:String>
+    <sys:String x:Key="ImageProcessingApplying">Applying</sys:String>
+
+    <sys:String x:Key="ModelTraining">Model Training</sys:String>
+    <sys:String x:Key="InputOutputPaths">Set Input/Output Paths</sys:String>
+    <sys:String x:Key="OriginImgDir">Set the Original Image Folder Path</sys:String>
+    <sys:String x:Key="SegmentationDir">Set the Path for the GT Images</sys:String>
+    <sys:String x:Key="TargetRootDir">Set the Root Path for Saving Files</sys:String>
+    <sys:String x:Key="PretrainedModelFile">Set the Pretrained Model File Path</sys:String>
+    <sys:String x:Key="SplitDataSet">Set Split Ratio for Dataset</sys:String>
+    <sys:String x:Key="TrainingPercent">Set Ratio for Training Set(%)</sys:String>
+    <sys:String x:Key="ValidationPercent">Set Ratio for Validation Set(%)</sys:String>
+    <sys:String x:Key="DefectInfo">Set Defect Information</sys:String>
+    <sys:String x:Key="DefectInfoWindow">Open the Defect Info Window</sys:String>
+    <sys:String x:Key="DefectInfoEditWindow">DefectInfoEditWindow</sys:String>
+    <sys:String x:Key="AddDefect">Add Defect Info</sys:String>
+    <sys:String x:Key="DeleteDefect">Delete Selected Defect</sys:String>
+    <sys:String x:Key="DefectName">Defect Name</sys:String>
+    <sys:String x:Key="DefectID">Defect ID（Pixel Value）</sys:String>
+    <sys:String x:Key="PreprocessingParamsBeforeTrain">Image Preprocessing Params</sys:String>
+    <sys:String x:Key="ImageScaledWidth">Scaling Image Width</sys:String>
+    <sys:String x:Key="ImageScaledHeight">Scaling Image Height</sys:String>
+    <sys:String x:Key="ImageScaledNumChannels">Scaling Number of Channels</sys:String>
+    <sys:String x:Key="ImageRangeMin">Minimum grayscale value</sys:String>
+    <sys:String x:Key="ImageRangeMax">Maximum grayscale value</sys:String>
+    <sys:String x:Key="NormalizationType">Image Normalization Type</sys:String>
+    <sys:String x:Key="TrainingParams">Model Training Params</sys:String>
+    <sys:String x:Key="BatchSizeDuringTraining">The Sample Size Used for a Single Model Update</sys:String>
+    <sys:String x:Key="LearningRate">Learning Rate</sys:String>
+    <sys:String x:Key="Momentum">Momentum</sys:String>
+    <sys:String x:Key="NumEpochs">NumEpochs</sys:String>
+    <sys:String x:Key="EvaluationIntervalEpochs">EvaluationIntervalEpochs</sys:String>
+    <sys:String x:Key="RandSeed">Random Seed</sys:String>
+    <sys:String x:Key="Train">Train</sys:String>
+
+    <sys:String x:Key="ImageDetection">Image Detection</sys:String>
+    <sys:String x:Key="LoadImage">Load Images</sys:String>
+    <sys:String x:Key="LoadSingleImage">Load Single Image</sys:String>
+    <sys:String x:Key="LoadPreprocessParamDict">Load Preprocessing Parameters File</sys:String>
+    <sys:String x:Key="LoadTrainedModel">Load Trained Model file</sys:String>
+    <sys:String x:Key="Run">Run</sys:String>
+    <sys:String x:Key="Debug">Debug</sys:String>
+    <sys:String x:Key="RunAndSave">Execute And Save</sys:String>
+
+    <sys:String x:Key="ImgSrc">Image Source</sys:String>
+    <sys:String x:Key="ImgOutput">Image Output</sys:String>
+    <sys:String x:Key="LoadImgSaveDirectory">Load Image Save Directory</sys:String>
+    <sys:String x:Key="SetRecognitionArea">Create Rectangular ROI Area</sys:String>
+    <sys:String x:Key="ClearROIArea">Clear ROI Area</sys:String>
+    <sys:String x:Key="No.">No.</sys:String>
+    <sys:String x:Key="Score">Score</sys:String>
+    <sys:String x:Key="DispText">Display Text</sys:String>
+    <sys:String x:Key="FiltrationArea">Defect Filtering Area</sys:String>
+
+    <sys:String x:Key="ImgProcessOperator">Image Process Operators</sys:String>
+    <sys:String x:Key="Grayscale">Add Grayscale Node</sys:String>
+    <sys:String x:Key="HistogramEqualization">Add Histogram Equalization Node</sys:String>
+    <sys:String x:Key="MedianFilter">Add Median Filter Node</sys:String>
+    <sys:String x:Key="GaussianFilter">Add Gaussian Filter Node</sys:String>
+    <sys:String x:Key="GrayscaleNode">Grayscale</sys:String>
+    <sys:String x:Key="HistogramEqualizationNode">Histogram Equalization</sys:String>
+    <sys:String x:Key="MedianFilterNode">Median Filter</sys:String>
+    <sys:String x:Key="GaussianFilterNode">Gaussian Filter</sys:String>
+    <sys:String x:Key="RecipeSetting">Recipe Setting</sys:String>
+    <sys:String x:Key="RecipeSaving">Recipe Saving</sys:String>
+    <sys:String x:Key="RecipeApplying">Recipe Applying</sys:String>
+    <sys:String x:Key="LoadRecipeApplying">Load Recipe To Apply</sys:String>
+
+    <sys:String x:Key="ImportFromExcel">Import From Excel</sys:String>
+    <sys:String x:Key="ExportExcel">Export Excel</sys:String>
+
+    <sys:String x:Key="Input">Input</sys:String>
+    <sys:String x:Key="Output">Output</sys:String>
+
+    <sys:String x:Key="LightColor">Light Color</sys:String>
+    <sys:String x:Key="DarkColor">Dark Color</sys:String>
+
+    <sys:String x:Key="Setting">Settings</sys:String>
+    <sys:String x:Key="CurrentLanguage">Current Language</sys:String>
+    <sys:String x:Key="Skin">Skin</sys:String>
+    <sys:String x:Key="SaveSettings">Save Settings</sys:String>
+</ResourceDictionary>
