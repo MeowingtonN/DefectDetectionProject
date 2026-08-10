@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2D667158-A956-4F18-92F1-65F2EFA1326C}|Wang.DefectDetectionProject\\Wang.DefectDetectionProject.csproj|d:\\capstone\\defectdetectionproject\\wang.defectdetectionproject\\wang.defectdetectionproject\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2D667158-A956-4F18-92F1-65F2EFA1326C}|Wang.DefectDetectionProject\\Wang.DefectDetectionProject.csproj|solutionrelative:wang.defectdetectionproject\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8CA0BE2D-2FF2-42E4-AAAE-3BFCA38735AB}|Wang.DefectDetectionProject.Core\\Wang.DefectDetectionProject.Core.csproj|d:\\capstone\\defectdetectionproject\\wang.defectdetectionproject\\wang.defectdetectionproject.core\\defectdetection\\defectdetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CA0BE2D-2FF2-42E4-AAAE-3BFCA38735AB}|Wang.DefectDetectionProject.Core\\Wang.DefectDetectionProject.Core.csproj|solutionrelative:wang.defectdetectionproject.core\\defectdetection\\defectdetectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,6 +39,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject\\App.xaml",
+              "RelativeDocumentMoniker": "Wang.DefectDetectionProject\\App.xaml",
+              "ToolTip": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject\\App.xaml",
+              "RelativeToolTip": "Wang.DefectDetectionProject\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-09T07:48:39.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DefectDetectionService.cs",
               "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
               "RelativeDocumentMoniker": "Wang.DefectDetectionProject.Core\\DefectDetection\\DefectDetectionService.cs",
@@ -47,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ModelTrainService.cs",
               "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
               "RelativeDocumentMoniker": "Wang.DefectDetectionProject.Core\\DefectDetection\\ModelTrainService.cs",
@@ -59,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DefectDetectionView.xaml",
               "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
               "RelativeDocumentMoniker": "Wang.DefectDetectionProject.DefectDetection\\Views\\DefectDetectionView.xaml",
@@ -70,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DefectDetectionViewModel.cs",
               "DocumentMoniker": "D:\\Capstone\\DefectDetectionProject\\Wang.DefectDetectionProject\\Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
               "RelativeDocumentMoniker": "Wang.DefectDetectionProject.DefectDetection\\ViewModels\\DefectDetectionViewModel.cs",
