@@ -233,6 +233,7 @@ namespace Wang.DefectDetectionProject.DefectDetection.ViewModels
                 // 每次重新加载时清空旧数据
                 Images.Clear(); 
                 DefectDetectionService.ImageListItems.Clear();
+                DrawingObjectList?.Clear();
 
                 StringBuilder stringBuilder = new StringBuilder();
 
@@ -301,6 +302,7 @@ namespace Wang.DefectDetectionProject.DefectDetection.ViewModels
                 // 每次重新加载时清空旧数据
                 Images.Clear();
                 DefectDetectionService.ImageListItems.Clear();
+                DrawingObjectList?.Clear();
 
                 string folderPath = folderDialog.FolderName;
                 string[] files = Directory.GetFiles(folderPath, "*.*");

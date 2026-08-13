@@ -1,6 +1,5 @@
 ﻿using HalconDotNet;
 using Microsoft.Win32;
-using Prism.Events;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
@@ -264,6 +263,7 @@ namespace Wang.DefectDetectionProject.ImageProcess.ViewModels
                 }
 
                 SrcImages!.Clear();
+                DrawingObjectList?.Clear();
                 SrcImages.Add(img);
                 CurrentImage = img;
             }
@@ -289,6 +289,7 @@ namespace Wang.DefectDetectionProject.ImageProcess.ViewModels
                 // 每次重新加载时清空旧数据
                 SrcImages.Clear();
                 SrcImageFileNames.Clear();
+                DrawingObjectList?.Clear();
                 HWindow?.ClearWindow();
 
                 StringBuilder sb = new StringBuilder();
@@ -351,6 +352,7 @@ namespace Wang.DefectDetectionProject.ImageProcess.ViewModels
                 // 每次重新加载时清空旧数据
                 SrcImages.Clear();
                 SrcImageFileNames.Clear();
+                DrawingObjectList?.Clear();
                 HWindow?.ClearWindow();
 
                 string folderPath = folderDialog.FolderName;
