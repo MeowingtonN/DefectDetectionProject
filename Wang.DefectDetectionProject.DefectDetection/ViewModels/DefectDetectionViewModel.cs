@@ -1,15 +1,15 @@
 ﻿using HalconDotNet;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Text;
 using System.Windows;
 using Wang.DefectDetectionProject.Core;
 using Wang.DefectDetectionProject.Core.DefectDetection;
+using Wang.DefectDetectionProject.Core.ExcelHelper;
 using Wang.DefectDetectionProject.Core.Extensions;
 using Wang.DefectDetectionProject.Core.Models;
 using Wang.DefectDetectionProject.Shared.Controls;
-using System.IO;
-using System.Text;
-using Wang.DefectDetectionProject.Core.ExcelHelper;
 
 namespace Wang.DefectDetectionProject.DefectDetection.ViewModels
 {
@@ -33,6 +33,7 @@ namespace Wang.DefectDetectionProject.DefectDetection.ViewModels
             LoadTrainedModelCommand = new DelegateCommand(LoadTrainedModel);
             ChangeImageCommand = new DelegateCommand<ImageListItem>(ChangeImage);
             ExportExcelCommand = new DelegateCommand(ExportExcel);
+            ExportDetectionImgCommand = new DelegateCommand(ExportDetectionImg);
         }
 
         /// <summary>
@@ -374,6 +375,48 @@ namespace Wang.DefectDetectionProject.DefectDetection.ViewModels
             }
         }
 
+        /// <summary>
+        /// 导出缺陷检测图像
+        /// </summary>
+        private void ExportDetectionImg()
+        {
+            var folderDialog = new OpenFolderDialog();
+            folderDialog.Title = "请选择缺陷检测图像保存目录";
+
+            if (folderDialog.ShowDialog() == true)
+            {
+                string imgsSaveDir = folderDialog.FolderName;
+
+                Task.Run(() =>
+                {
+                    SaveImages(DefectDetectionService.ImageListItems, imgsSaveDir);
+                });
+            }
+        }
+
+        /// <summary>
+        /// 保存指定集合中的图像
+        /// </summary>
+        /// <param name="imageList"></param>
+        /// <param name="dirName"></param>
+        /// <param name="imgFormat"></param>
+        private static void SaveImages(ObservableCollection<ImageListItem>? imageList, string dirName, string imgFormat = "png")
+        {
+            if (imageList == null || dirName == null || imageList.Count <= 0 || dirName.Length <= 0) return;
+
+            // 确保保存目录存在
+            if (!Directory.Exists(dirName))
+                Directory.CreateDirectory(dirName);
+
+            foreach (ImageListItem item in imageList)
+            {
+                string baseName = Path.GetFileNameWithoutExtension(item.Title!);
+                string fileName = $"{baseName}.{imgFormat}";  // 使用原图名保存
+                string filePath = Path.Combine(dirName, fileName);
+                HOperatorSet.WriteImage(item.Image, imgFormat, 0, filePath);
+            }
+        }
+
         #region 按钮命令属性
         /// <summary>
         /// 执行按钮命令
@@ -409,6 +452,11 @@ namespace Wang.DefectDetectionProject.DefectDetection.ViewModels
         /// 导出检测结果Excel表格按钮命令
         /// </summary>
         public DelegateCommand ExportExcelCommand { get; }
+
+        /// <summary>
+        /// 导出缺陷检测图像按钮命令
+        /// </summary>
+        public DelegateCommand ExportDetectionImgCommand { get; }
         #endregion
 
         #region 服务

@@ -360,6 +360,7 @@
                                     <Expander.Content>
                                         <StackPanel>
                                             <Button Content="{DynamicResource ExportExcel}" Margin="10, 10, 15, 10" Command="{Binding ExportExcelCommand}"/>
+                                            <Button Content="{DynamicResource ExportDetectionImg}" Margin="10, 0, 15, 15" Command="{Binding ExportDetectionImgCommand}"/>
                                         </StackPanel>
                                     </Expander.Content>
                                 </Expander>

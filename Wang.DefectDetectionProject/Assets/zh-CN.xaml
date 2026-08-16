@@ -90,6 +90,7 @@
 
     <sys:String x:Key="ImportFromExcel">从Excel导入</sys:String>
     <sys:String x:Key="ExportExcel">导出Excel</sys:String>
+    <sys:String x:Key="ExportDetectionImg">导出检测图像</sys:String>
 
     <sys:String x:Key="Input">输入</sys:String>
     <sys:String x:Key="Output">输出</sys:String>
