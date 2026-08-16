@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wang.DefectDetectionProject.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e19ac751356cd97ffdb8a02ec38ed3a2b2d1f387")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+720cd93cd640c53b38bd10e0a2dad503a7809a11")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wang.DefectDetectionProject.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wang.DefectDetectionProject.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

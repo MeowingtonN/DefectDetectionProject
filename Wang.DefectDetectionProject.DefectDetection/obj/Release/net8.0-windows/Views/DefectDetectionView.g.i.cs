@@ -67,8 +67,8 @@ namespace Wang.DefectDetectionProject.DefectDetection.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Wang.DefectDetectionProject.DefectDetection;component/views/defectdetectionview." +
-                    "xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Wang.DefectDetectionProject.DefectDetection;V1.0.0.0;component/views/defectdetec" +
+                    "tionview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\DefectDetectionView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

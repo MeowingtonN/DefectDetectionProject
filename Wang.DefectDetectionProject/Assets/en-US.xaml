@@ -90,7 +90,7 @@
 
     <sys:String x:Key="ImportFromExcel">Import From Excel</sys:String>
     <sys:String x:Key="ExportExcel">Export Excel</sys:String>
-    <sys:String x:Key="ExportDetectionImg">Export Inspection Image</sys:String>
+    <sys:String x:Key="ExportDetectionImg">Export Inspection Images</sys:String>
 
     <sys:String x:Key="Input">Input</sys:String>
     <sys:String x:Key="Output">Output</sys:String>
